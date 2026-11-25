@@ -6,7 +6,7 @@ import java.awt.*;
  * Клас "Фігура для малювання".
  * Клас містить початкову та кінцеву точку, а також різні методи
  */
-public class DrawShape {
+public abstract class DrawShape {
 
     public static DrawShape newInstance(int shapeType) {
         DrawShape shape = null;
@@ -48,10 +48,7 @@ public class DrawShape {
         return this.getShape(startPoint, endPoint);
     }
 
-    // Так, як ми не можемо намалювати просто "фігуру", то метод повертає null
-    public Shape getShape(Point startPoint, Point endPoint) {
-        return null;
-    }
+    public abstract Shape getShape(Point startPoint, Point endPoint);
 
     public void setStartPoint(Point startPoint) {
         this.startPoint = startPoint;
