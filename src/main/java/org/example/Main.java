@@ -27,11 +27,8 @@ public class Main {
         Car carA = new Car("Авто 1", 18500, 2019, 285);
         Car carB = new Car("Авто 2", 34200, 2023, 190);
 
-        System.out.println("Авто 1. Вартість: " + carA.getPrice() + "; Рік виготовлення: "
-                + carA.getHorsePower() + "; К.С.: " + carA.getHorsePower());
-        System.out.println("Авто 2. Вартість: " + carB.getPrice() + "; Рік виготовлення: "
-                + carB.getHorsePower() + "; К.С.: " + carB.getHorsePower());
-        System.out.println();
+        System.out.println(carA.toString());
+        System.out.println(carB.toString() + "\n");
 
         if (carA.compareTo(carB) < 0)
             System.out.println(carB.getName() + " більше за " + carA.getName());
@@ -41,6 +38,8 @@ public class Main {
             System.out.println("Характеристики " + carA.getName() + " та " + carB.getName() + " однакові");
 
         Car carC = new Car("Авто 3", 34200, 2023, 190);
+
+        System.out.println("\n" + carC.toString() + "\n");
 
         if (carC.compareTo(carB) < 0)
             System.out.println(carB.getName() + " більше за " + carC.getName());

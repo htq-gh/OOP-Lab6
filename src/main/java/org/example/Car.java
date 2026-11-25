@@ -46,17 +46,22 @@ public class Car implements Comparable {
     }
 
     @Override
+    public String toString() {
+        return getName() + ": Вартість: " + getPrice() + "; Рік виготовлення: "
+                + getYear() + "; К.С.: " + getHorsePower();
+    }
+
+    @Override
     public int compareTo(Object object) {
-        Car other = (Car) object; // Приведення типу (бо Comparable не типізований)
+        Car other = (Car) object;
 
-        int difference = other.price - this.price;
-        if (difference != 0)
-            return difference;
+        int priceDiff = other.price - this.price;
+        int yearDiff = this.year - other.year;
+        int hpDiff = this.horsePower - other.horsePower;
 
-        difference = this.year - other.year;
-        if (difference != 0)
-            return difference;
+        int hasPriceDiff = priceDiff * priceDiff;
+        int hasYearDiff = yearDiff * yearDiff;
 
-        return this.horsePower - other.horsePower;
+        return priceDiff;
     }
 }
